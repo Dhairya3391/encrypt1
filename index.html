@@ -9,8 +9,8 @@
   <script defer>
   const import_keys = async () => {
     // get the public key from server
-    let pubKey = await (await fetch("/demo-keypairs/id_rsa.pub")).text()
-    let priKey = await (await fetch("/demo-keypairs/id_rsa")).text()
+    let pubKey = await (await fetch("/id_rsa.pub")).text()
+    let priKey = await (await fetch("/id_rsa")).text()
     // import the public key
     await CryptoHelper.importPublicKey(pubKey)
     await CryptoHelper.importPrivateKey(priKey)
