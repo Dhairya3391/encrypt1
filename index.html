@@ -81,60 +81,41 @@
     }
     textarea{
       width: 80%;
-      height: 300px;
+      height: 200px;
       resize: vertical;
     }
     #error{
       color: red;
     }
   </style>
-	
-  </head>
-  <body>
-  <form action="login.php" method="GET">
-  <center>
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Encrypt</span><span>Decrypt</span></h6>
-			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-			          	<label for="reg-log"></label>
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h3 class="mb-4 pb-3"><center> Decrypted </center></h3>
-											<div class="form-group">
-												<textarea></textarea>
-												<i class="input-icon uil uil-at"></i>
-											</div>
-											<a href="#" class="btn mt-4">Encrypt</a><center></center>
-				      					</div>
-			      					</div>
-			      				</div>
-								<div class="card-back">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Encrypted</h4>
-											<div class="form-group">
-												<textarea></textarea>
-												<i class="input-icon uil uil-user"></i>
-											</div>
-											<a href="#" class="btn mt-4">Decrypt</a>
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
-	</div>
-	</center>
-	</form>
-  </body>
+
+</head>
+<body>
+
+  <div class="keypair-flex">
+    <div>
+      <h4>PUBLIC KEY</h4>
+      <div id="public-key"></div>
+    </div>
+    <div>
+      <h4>PRIVATE KEY</h4>
+      <div id="private-key"></div>
+    </div>
+  </div>
+  <br><br><br>
+  <h4>ENCRYPTION//DECRYPTION</h4>
+  <div class="keypair-flex1">
+    <div class="decrypted">
+      <h3>decrypted</h3>
+      <textarea id="decrypted-text"> </textarea><br>
+      <button onclick="encrypt_text()">ENCRYPT</button>
+    </div>
+	  <div class="encrypted">
+      <h3>encrypted</h3>
+      <textarea id="encrypted-text"></textarea><br>
+      <button onclick="decrypt_text()">DECRYPT</button>
+    </div>
+  </div>
+  <h4 id="error"></h4>
+</body>
 </html>
